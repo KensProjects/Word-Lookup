@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useAtom } from "jotai/react";
+import { errorAtom } from "../../context/Error";
 
-import { endpoint } from "../config/config";
+import { endpoint } from "../../config/config";
 
 import "./Search.css";
 
@@ -8,7 +10,7 @@ export default function Search() {
   const [input, setInput] = useState<string>("");
   const [word, setWord] = useState<string>("");
   const [definitions, setDefinitions] = useState<any[]>([]);
-  const [isError, setIsError] = useState<boolean>(false);
+  const [isError, setIsError] = useAtom(errorAtom);
   const [isActive, setIsActive] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -50,6 +52,9 @@ export default function Search() {
       setIsActive(false);
       setWord("");
       setIsError(true);
+      setTimeout(() => {
+        setIsError(false)
+      },3000)
     }
   }
   if (isLoading) {
@@ -116,7 +121,6 @@ export default function Search() {
             </ul>
           </div>
         ) : null}
-        {isError ? <div className="text-red-600 text-2xl">Error!</div> : null}
       </div>
     </>
   );

@@ -1,10 +1,15 @@
 {
-  "name": "word-search",
+  "name": "word-lookup",
   "private": false,
   "version": "0.0.0",
   "type": "module",
   "license": "MIT",
-  "keywords": ["dictionary","search","word", "search"],
+  "keywords": [
+    "dictionary",
+    "search",
+    "word",
+    "search"
+  ],
   "description": "A simple application used to search for multiple definitions with a comprehensive collection of available words.",
   "scripts": {
     "dev": "vite",
@@ -12,6 +17,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "jotai": "^2.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
