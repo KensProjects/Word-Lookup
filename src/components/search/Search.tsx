@@ -108,7 +108,7 @@ export default function Search() {
           <div className="flex flex-col justify-center items-center w-full h-full py-4 shadow-2xl bg-gray-100">
             <div className="text-3xl font-medium pb-8">{word}</div>
             <ul className="list-disc list-inside w-full sm:w-3/4 h-full text-left">
-              {definitions.map((definition: string, i: number) => {
+              {definitions.sort().map((definition: string, i: number) => {
                 return (
                   <li
                     className="hover:text-red-500  text-md hover:text-lg duration-300 ease-in-out sm:text-xl sm:hover:text-2xl"
